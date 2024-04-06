@@ -6,17 +6,17 @@ import java.util.HashMap;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-    //prova per vedere se funziona la classe Persona
+        //prova per vedere se funziona la classe Persona
         Persona Arianna = new Persona("Arianna", "Via Roma 10");
-        Persona Alessandra = new Persona ("Alessandra");
+        Persona Alessandra = new Persona("Alessandra");
         Persona Marco = new Persona("Marco", "Via Milano 20");
         Persona Gino = new Persona("Gino", "viadjhfjd");
 
-        Casa Lenovo = new Casa("Lenovo", "Cina" );
-        Casa Samsung = new Casa ("Samsung", "Corea");
-        Casa Acer = new Casa ("Acer");
+        Casa Lenovo = new Casa("Lenovo", "Cina");
+        Casa Samsung = new Casa("Samsung", "Corea");
+        Casa Acer = new Casa("Acer");
 
-        Computer computer1 = new Computer(Lenovo,300);
+        Computer computer1 = new Computer(Lenovo, 300);
         Computer computer2 = new Computer(Samsung, 450);
         Computer computer3 = new Computer(Lenovo, 1000);
         ComputerTavolo tavolo1 = new ComputerTavolo(Acer, 300, "LCD", 50);
@@ -31,20 +31,20 @@ public class Main {
         ComputerService gruppoComputer1 = new ComputerService(Arianna, "pippo", "Torino, via Roma 1", 10);
 
 
-    //prova per vedere se funziona la classe Casa
+        //prova per vedere se funziona la classe Casa
 
 
         System.out.println("Il nome della casa produttrice Lenovo è " + Lenovo.getNome());
         Acer.setNazione("Taiwan");
         System.out.println("La casa produttrice Acer si trova in " + Acer.getNazione());
 
-    //prova per vedere se funziona la classe Computer
+        //prova per vedere se funziona la classe Computer
 
 
         System.out.println("Numero Identificativo Unico del computer1: " + computer1.getIdComputer());
         System.out.println("La marca del computer1 è: " + computer1.getMarca()); //funziona ora che ho messo il metodo toString.
 
-    //i metodi aumenta/riduci funzionano
+        //i metodi aumenta/riduci funzionano
         computer1.riduci(20);
         System.out.println("Il nuovo valore del computer1 è: " + computer1.getValore());
 
@@ -66,7 +66,6 @@ public class Main {
         System.out.println("Il numero identificativo unico del computer2 è: " + computer2.getIdComputer());
         computer2.setUser(Alessandra);
         //prove secondo assignment
-
 
 
         System.out.println("L'utente assegnato al computer privato è: " + privato1.getUser());
@@ -113,7 +112,6 @@ public class Main {
         gruppoComputer1.cercaComputerDi(Arianna);
 
 
-
         //metodo per modificare il proprietario di un computer a partire dall'indice
         System.out.println(computer2.getUser()); //controllo chi è l'user del computer2
         Persona pippo = gruppoComputer1.modificaPropietario(1, Gino);
@@ -153,7 +151,7 @@ public class Main {
         System.out.println(Arrays.toString(gruppoComputer1.computerConUnicoProprietario()));
 
         /* Creo un secondo computer service con un array completamente pieno in modo da poter usare il metodo
-        * sort senza che mi esca una NullPointer Exception. */
+         * sort senza che mi esca una NullPointer Exception. */
         ComputerService gruppoComputer2 = new ComputerService(Marco, "paperino", "Milano, via Vittorio 20", 4);
         gruppoComputer2.aggiungiAlGruppo(computer1);
         gruppoComputer2.aggiungiAlGruppo(computer2);
