@@ -6,11 +6,11 @@ import java.util.HashMap;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        //prova per vedere se funziona la classe Persona
-        Persona Arianna = new Persona("Arianna", "Via Roma 10");
-        Persona Alessandra = new Persona("Alessandra");
-        Persona Marco = new Persona("Marco", "Via Milano 20");
-        Persona Gino = new Persona("Gino", "viadjhfjd");
+
+        Persona Arianna = new Persona("Franchetto", "Via Roma 10");
+        Persona Alessandra = new Persona("Rossi");
+        Persona Marco = new Persona("Bianchi", "Via Milano 20");
+        Persona Gino = new Persona("Verdi", "Via Nizza 45");
 
         Casa Lenovo = new Casa("Lenovo", "Cina");
         Casa Samsung = new Casa("Samsung", "Corea");
@@ -31,24 +31,23 @@ public class Main {
         ComputerService gruppoComputer1 = new ComputerService(Arianna, "pippo", "Torino, via Roma 1", 10);
 
 
-        //prova per vedere se funziona la classe Casa
 
 
         System.out.println("Il nome della casa produttrice Lenovo è " + Lenovo.getNome());
         Acer.setNazione("Taiwan");
         System.out.println("La casa produttrice Acer si trova in " + Acer.getNazione());
 
-        //prova per vedere se funziona la classe Computer
+
 
 
         System.out.println("Numero Identificativo Unico del computer1: " + computer1.getIdComputer());
         System.out.println("La marca del computer1 è: " + computer1.getMarca()); //funziona ora che ho messo il metodo toString.
 
-        //i metodi aumenta/riduci funzionano
+
         computer1.riduci(20);
         System.out.println("Il nuovo valore del computer1 è: " + computer1.getValore());
 
-        //anche questo funziona
+
 
         System.out.println("Fino ad ora abbiamo costruito " + Computer.getComputerCostruiti() + " computer.");
 
@@ -65,7 +64,7 @@ public class Main {
 
         System.out.println("Il numero identificativo unico del computer2 è: " + computer2.getIdComputer());
         computer2.setUser(Alessandra);
-        //prove secondo assignment
+
 
 
         System.out.println("L'utente assegnato al computer privato è: " + privato1.getUser());
@@ -83,7 +82,7 @@ public class Main {
         System.out.println("Il computer privato1 ha " + privato1.getQuantiUser() + " user.");
 
 
-        //PROVE TERZO ASSIGNMENT
+
         //Creato un gruppoComputer1 con array inizialmente vuoto
         System.out.println("Nel gruppoComputer1 ci sono " + gruppoComputer1.getQuantiComputer() + " computer.");
 
@@ -112,7 +111,7 @@ public class Main {
         gruppoComputer1.cercaComputerDi(Arianna);
 
 
-        //metodo per modificare il proprietario di un computer a partire dall'indice
+        //modificare il proprietario di un computer a partire dall'indice
         System.out.println(computer2.getUser()); //controllo chi è l'user del computer2
         Persona pippo = gruppoComputer1.modificaPropietario(1, Gino);
         System.out.println("Il nuovo proprietario del computer2 è: " + pippo);
@@ -146,12 +145,11 @@ public class Main {
         System.out.println("Stessa cosa, ma usando Arrays.toString: ");
         System.out.println(Arrays.toString(gruppoComputer1.trovaComputerConMarca(Samsung)));
 
-        //metodo per trovare i computer con unico proprietario
+        //trovare i computer con unico proprietario
         System.out.println("Mostriamo solo i computer con un unico proprietario: ");
         System.out.println(Arrays.toString(gruppoComputer1.computerConUnicoProprietario()));
 
-        /* Creo un secondo computer service con un array completamente pieno in modo da poter usare il metodo
-         * sort senza che mi esca una NullPointer Exception. */
+        /* Creo un secondo computer service con un array completamente pieno per usare sort */
         ComputerService gruppoComputer2 = new ComputerService(Marco, "paperino", "Milano, via Vittorio 20", 4);
         gruppoComputer2.aggiungiAlGruppo(computer1);
         gruppoComputer2.aggiungiAlGruppo(computer2);
@@ -169,6 +167,7 @@ public class Main {
         System.out.println("Computer1 aggiunto all'indice: " + indicenullo);
         gruppoComputer2.visualizzaProprietario(45);
 
+        //implementazione di una seconda classe uguale a ComputerService MA usa arraylist invece che array
         ComputerServiceList gruppoComputer3 = new ComputerServiceList(Arianna, "topolino", "Roma, via Bho 15");
         int i = gruppoComputer3.aggiungiComputer(computer1);
         System.out.println("Computer1 aggiunto all'indice " + i);
@@ -199,6 +198,7 @@ public class Main {
         System.out.println("Ora cerco i computer con marca Acer");
         System.out.println(gruppoComputer3.cercaComputerConMarca(Acer));
 
+        //Creazione hashmap
         YellowPages yellowPages = new YellowPages();
         System.out.println(yellowPages); //vuota
         yellowPages.aggiungiElemento("Torino", gruppoComputer1);
