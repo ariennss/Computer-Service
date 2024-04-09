@@ -50,18 +50,9 @@ public class ComputerService {
         if (quantiComputer < arrayDiComputer.length) {
             arrayDiComputer[quantiComputer] = c; /* al gruppoComputer che per ora ha 0 computer, assegno
                                                    il computer c */
-            /*quantiComputer++; //aggiunge un computer solo se c'è spazio nell'array */
 
-            /*
-            //parte del metodo che ti da l'indice del computer nell'array
-            int indice = 0;
-            for (int i = 0; i < arrayDiComputer.length; i++) {
-                if (arrayDiComputer[i] == c) {
-                    indice = i;
-                }
-            }*/
 
-            return quantiComputer++; //inizializzato a 0 sopra
+            return quantiComputer++; //inizializzato a 0 inizialmente
         }
         return -1; //restituisce -1 se non è possibile inserire un ulteriore computer così che si capisca che c'è un errore
 
@@ -105,9 +96,7 @@ public class ComputerService {
                 }
             }
         }
-        /*l'array temp l'ho creato perché inizialmente pensavo che fosse un metodo che mi dovesse
-        * restituire un array con al suo interno soltanto i computer della Persona p. Lo avevo pensato come un
-        * "public Computer[] cercaComputerDi(Persona p)" con un "return temp;" al fondo. */
+
     }
 
     //stampare i dati di ognuno dei computer.
@@ -125,8 +114,7 @@ public class ComputerService {
         /* Persona temp = this.service[indice].getUser();
         temp = user; */
         this.arrayDiComputer[indice].setUser(user);
-        /*System.out.println("Il nuovo proprietario del computer è " + user);
-        * stampa tolta dopo che ci ha detto che i metodi non dovrebbero stampare niente. */
+
         return this.arrayDiComputer[indice].getUser();
     }
 
@@ -194,16 +182,7 @@ public class ComputerService {
             }
         }
 
-        /* questa parte del codice stampa solo i computer con marca che passo nel parametro.
-        int indice;
-        for (indice = 0; indice < temp.length; indice++) {
-            if (temp[indice] != null) {
-                System.out.println(temp[indice]);
-            }
-        }
 
-        Eliminato dopo che ci ha detto che i metodi non dovrebbero stampare!
-         */
         return temp;
 
 

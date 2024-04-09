@@ -16,10 +16,7 @@ public class Persona {
     private String cognome;
     private String indirizzo;
 
-    //costruttori
-    /*modificato ID persona:
-    prima lo avevo fatto passare come parametro nel costruttore
-     */
+
     public Persona (String cognome, String indirizzo) {
         this.id = ++conteggio;
         this.cognome = cognome;
@@ -54,16 +51,9 @@ public class Persona {
 
     public String toString() {
         return " " + id + " " + cognome + " " + indirizzo;
-    } //così quando faccio println di User non escono cose strane
+    }
 
-    /*
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Persona persona = (Persona) o;
-        return id == persona.id && Objects.equals(cognome, persona.cognome) && Objects.equals(indirizzo, persona.indirizzo);
-    }*/
+
 
     public boolean equals(Persona user) {
         if (this == user) {

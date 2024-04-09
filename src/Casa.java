@@ -36,14 +36,7 @@ public class Casa {
     public String toString() {
         return " " + nome + " " + nazione;
     } //così quando faccio println di Marca non escono cose strane
-/*
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Casa casa = (Casa) o;
-        return Objects.equals(nome, casa.nome) && Objects.equals(nazione, casa.nazione);
-    }*/
+
 
     public boolean equals(Casa marca) {
         if (this == marca) {

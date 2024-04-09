@@ -1,11 +1,9 @@
 public class Computer implements Comparable<Computer> {
-    /*
-    manca un private static int conteggio = 0; (per aumentare id)
-     */
+
     //attributi
     private static int contaId = 0;
     private int idComputer;
-    private Persona user; //utilizzatore
+    private Persona user;
     private Casa marca;
     private int valore;
     private int quantiUser;
@@ -31,7 +29,7 @@ public class Computer implements Comparable<Computer> {
         this.quantiUser++;
     }
 
-    //costruttore vuoto che ho creato per gli arrays ma non ho ancora capito se mi serve o no
+
     public Computer() {
         this.user = null;
         this.marca = null;
@@ -64,7 +62,7 @@ public class Computer implements Comparable<Computer> {
         return computerCostruiti;
     }
 
-    //setter - tranne identificativo(idComputer) e n. utilizzatori (quantiUser);
+
     public static void setComputerCostruiti(int computerCostruiti) {
         Computer.computerCostruiti = computerCostruiti;
     }
@@ -85,7 +83,7 @@ public class Computer implements Comparable<Computer> {
     }
 
     // aumentare valore
-    public void aumenta (int x) {
+    public void aumenta(int x) {
         this.valore = this.valore + x;
     }
 
@@ -109,7 +107,7 @@ public class Computer implements Comparable<Computer> {
 
     //metodo privato per aumentare di 1 il numero di utilizzatori
     private void aumentaUser() {
-        quantiUser++; //this.quantiUser++;
+        this.quantiUser++;
 
 
     }
